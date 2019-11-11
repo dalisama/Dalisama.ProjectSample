@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dalisama.ProjectSample.Gateway.Controllers
@@ -9,9 +10,9 @@ namespace Dalisama.ProjectSample.Gateway.Controllers
         // GET: api/<controller>
         [HttpGet]
         [ActionName("health")]
-        public ActionResult<string> Get()
+        public ActionResult<string> Get([FromServices]IWebHostEnvironment hostingEnvironement)
         {
-            return Ok("im ok");
+            return Ok($"I'm alive in the {hostingEnvironement.EnvironmentName}.");
         }
         [HttpGet]
         [ActionName("badhealth")]

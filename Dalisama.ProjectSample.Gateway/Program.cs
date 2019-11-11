@@ -20,7 +20,7 @@ namespace Dalisama.ProjectSample.Gateway
         {
             Log.Logger = new LoggerConfiguration()
                                  .ReadFrom.Configuration(Configuration)
-                                 .WriteTo.File(new JsonFormatter(), @"logs.json", shared: true).WriteTo.Console(new JsonFormatter())
+                                 .WriteTo.File(new JsonFormatter(), @"c://tmp/logs.json", shared: true).WriteTo.Console(new JsonFormatter())
                                  .CreateLogger();
 
             try
