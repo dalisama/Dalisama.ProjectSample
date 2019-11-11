@@ -8,12 +8,10 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dalisama.ProjectSimple.Host.Common.Middleware
+namespace Dalisama.ProjectSample.Host.Common.Middleware
 {
     public class TraceLoggingMiddleware
     {
-
-
         private readonly RequestDelegate _next;
         private readonly ILogger<TraceLoggingMiddleware> _logger;
 

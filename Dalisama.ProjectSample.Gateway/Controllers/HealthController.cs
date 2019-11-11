@@ -1,23 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Dalisama.ProjectSimple.Gateway.Controllers
+namespace Dalisama.ProjectSample.Gateway.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[action]")]
     public class HealthController : Controller
     {
         // GET: api/<controller>
         [HttpGet]
-        [ActionName("Health")]
+        [ActionName("health")]
         public ActionResult<string> Get()
         {
             return Ok("im ok");
         }
         [HttpGet]
-        [ActionName("BadHealth")]
+        [ActionName("badhealth")]
         public ActionResult<string> GetException()
         {
             throw new Exception();

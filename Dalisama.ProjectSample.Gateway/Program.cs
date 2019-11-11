@@ -6,7 +6,7 @@ using Serilog;
 using Serilog.Formatting.Json;
 using System;
 using System.IO;
-namespace Dalisama.ProjectSimple.Gateway
+namespace Dalisama.ProjectSample.Gateway
 {
     public class Program
     {
@@ -22,7 +22,6 @@ namespace Dalisama.ProjectSimple.Gateway
                                  .ReadFrom.Configuration(Configuration)
                                  .WriteTo.File(new JsonFormatter(), @"logs.json", shared: true).WriteTo.Console(new JsonFormatter())
                                  .CreateLogger();
-
 
             try
             {
