@@ -18,11 +18,12 @@ namespace Dalisama.ProjectSample.Gateway
 
         public static void Main(string[] args)
         {
-            //todo add seq
-            // adde enrichment
+
             Log.Logger = new LoggerConfiguration()
                                  .ReadFrom.Configuration(Configuration)
-                                 .WriteTo.File(new JsonFormatter(), @"c://tmp/logs.json", shared: true).WriteTo.Console(new JsonFormatter())
+                                 .WriteTo.File(new JsonFormatter(), @"c://tmp/logs.json", shared: true).WriteTo
+                                 .ColoredConsole()
+                                 .WriteTo.Seq("http://localhost:5341")
                                  .CreateLogger();
 
             try
